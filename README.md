@@ -1,28 +1,26 @@
-# Turtle-Race-Bet
+
 A python game or bet type program in which you will select one turtle and will bet which one will win.
 from turtle import Turtle, Screen, width
 import random
 
-# is game start
+
 is_race_on = False
 
-# creating objects
+
 turtle = Turtle()
 screen = Screen()
 
-# specifying screen size
+
 screen.setup(width=700, height=600)
 
-# make bet
+
 make_bet = screen.textinput(title="Make Your Bet", prompt="Which turtle win the race? Enter a color(red, yellow, orange, green, blue, purple),: ",)
 
-# turtle colors
+
 colors = ["red", "yellow", "orange", "green", "blue", "purple", ]
 
-# turtle y-axis position for add gap with each other
 position = [-70, -40, -10, 20, 50, 80]
 
-# empty list for all turtle
 all_turtle = []
 
 for turtle_index in range(0, 6):
@@ -37,11 +35,9 @@ for turtle_index in range(0, 6):
     # add all turtle on the list
     all_turtle.append(turtle)
 
-# checking make bet
 if make_bet:
     is_race_on = True
 
-# Start the game
 while is_race_on:
 
     for turtle in all_turtle:
@@ -58,5 +54,4 @@ while is_race_on:
         rand_distance = random.randint(0, 11)
         turtle.forward(rand_distance)
 
-# exit the program on click
 screen.exitonclick()
